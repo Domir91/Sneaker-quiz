@@ -1,0 +1,356 @@
+/* Resetování základních stylů */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tělo stránky */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, rgba(116, 235, 213, 0.5), rgba(159, 174, 230, 0.5)), 
+    url('../bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styl pro hlavičku */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, #4e73df, #5a67d8, #7f9cf5); /* Studené odstíny modré a fialové */
+    color: white;
+    padding: 40px 80px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1000;
+    overflow: hidden;
+    border-radius: 20px; /* Zaoblené rohy */
+    animation: fadeIn 2s ease-out;
+    width: calc(100% - 40px); /* Zkrácení šířky hlavičky */
+    margin: 0 auto;
+}
+
+/* Animace pro zobrazení hlavičky */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Titulek hlavičky */
+header h1 {
+    font-size: 50px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    animation: slideInLeft 2s ease-out;
+}
+
+/* Animace pro titulek */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Tlačítka v hlavičce */
+header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 30px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: transform 0.4s ease, background-color 0.6s ease, box-shadow 0.4s ease;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efekty při najetí na odkazy */
+header a:hover {
+    background-color: #38bdf8; /* Světle modrá */
+    color: #2b4c8b;
+    transform: scale(1.1) translateY(-5px); /* Pohyb odkazu při hoveru */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animace pro plynulý pohyb pozadí */
+header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    z-index: -1;
+    animation: moveBackground 5s ease-in-out infinite;
+}
+
+/* Animace pro plynulý pohyb pozadí */
+@keyframes moveBackground {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Vlnový efekt vytvořený pomocí CSS */
+header:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.15), transparent 50%, rgba(255, 255, 255, 0.1));
+    background-size: 50px 50px;
+    animation: waveAnimation 4s infinite linear;
+}
+
+/* Animace pro vlnu */
+@keyframes waveAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 0;
+    }
+}
+
+
+/* Hlavní kontejner kvízu */
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Kvíz */
+.quiz {
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 1200px;
+    width: 90%;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hlavička otázky */
+.question-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: #555;
+}
+
+.question-number {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mezera mezi otázkami */
+.question {
+    margin-bottom: 50px;
+}
+
+/* Obsah otázky */
+.question-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* Obrázek */
+.quiz-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.quiz-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Možnosti */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.options label {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: #333;
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Hover efekt */
+.options label:hover {
+    background: linear-gradient(135deg, #8fd3f4, #84fab0);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.025);  /* Skákání: zvětšení */
+}
+
+/* Skrytí radiobuttonu */
+input[type="radio"] {
+    display: none;
+}
+
+/* Styl pro označené odpovědi při kliknutí */
+.options label.selected {
+    background: linear-gradient(135deg, #ff7f50, #ffb6a6);  /* Korálová + světle růžová */
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ff7f50;
+    transform: translateY(-5px);  /* Skákání o 5px */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ikona při výběru */
+.options label.selected::before {
+    content: "✔";
+    font-size: 1.8rem;
+    color: white;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Při výběru a na hoveru se dostanou do animace */
+.options label.selected:hover {
+    background: linear-gradient(135deg, #ff7f50, #ffb6a6); /* Korálová + světle růžová */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);  /* Skákání o 5px */
+}
+
+/* Tlačítko */
+.submit-btn {
+    background: linear-gradient(135deg, #4158d0, #c850c0);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin: 30px auto 0;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #c850c0, #4158d0);
+    transform: scale(1.05);
+    transform: translateY(-3px);
+}
+
+.submit-btn:active {
+    transform: translateY(2px);
+}
+
+/* Styl pro patičku */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6); /* Tmavý poloprůhledný pozadí */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Patička je zpočátku skrytá */
+    transition: opacity 0.3s ease;
+    position: relative; /* Standardní pozice */
+}
+
+/* Ikony v patičce */
+footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    margin: 0 15px;
+    transition: transform 0.3s ease, color 0.4s ease, box-shadow 0.3s ease;
+}
+
+/* Efekty při najetí na odkazy */
+footer a:hover {
+    color: #38bdf8; /* Světle modrá */
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Efekt vlny v patičce */
+footer:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent);
+    animation: waveAnimation 2s infinite ease-in-out;
+}
+
+/* Animace pro efekt vlny */
+@keyframes waveAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
