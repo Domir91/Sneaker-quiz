@@ -16,14 +16,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
-// Funkce pro sledování scrollování
-window.addEventListener('scroll', function() {
-    const footer = document.querySelector('footer');
-    // Pokud je stránka posunutá více než 500px (nebo podle potřeby změnit)
-    if (window.scrollY > 500) {
-        footer.style.opacity = '1'; // Zobrazí patičku
-    } else {
-        footer.style.opacity = '0'; // Skryje patičku
-    }
-});
