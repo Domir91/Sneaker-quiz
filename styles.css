@@ -14,7 +14,7 @@ body {
     -webkit-overflow-scrolling: touch;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, rgba(116, 235, 213, 0.5), rgba(159, 174, 230, 0.5)), 
-    url('bg.jpg') no-repeat center center fixed;
+    url('img/bg.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
     line-height: 1.6;
@@ -182,6 +182,8 @@ input[type="radio"] {
     transform: translateY(2px);
 }
 
+
+/* Verze pro mobil */
 @media (max-width: 768px) {
     .question-content {
         flex-direction: column;
