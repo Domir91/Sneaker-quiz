@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kvíz na boty</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage a Kvíz</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Hlavička -->
-    <header class="main-header">
-        
-    </header>
 
-    <!-- Hlavní obsah -->
-    <main class="quiz-container">
-        <section class="quiz">
-            <!-- Sem se automaticky vloží otázky -->
-            <!-- Tlačítko pro odeslání odpovědí -->
-            <!-- <button class="submit-btn" type="submit">Odeslat odpovědi</button> -->
-        </section>
-    </main>
+  <!-- Homepage -->
+  <div id="homepage">
+    <div class="home-container">
+        <h1>Vítej u Kvízu na boty 👟</h1>
+        <p>Zjisti, jaké boty se k tobě hodí nejlépe. Stačí kliknout na tlačítko níže a začít.</p>
+        <button class="start-btn" onclick="showQuiz()">Spustit kvíz</button>
+    </div>
+    
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Kvíz -->
+  <div id="quiz" style="display: none;">
+    <!-- Kvízová sekce (skrytá na začátku) -->
+    <section id="quiz-section" style="display: none;">
+        <!-- Hlavička kvízu -->
+        <header class="main-header">
+            <!-- <h1>Kvíz o botách</h1>   (Kdyžtak nadpis kvízu.) -->  
+        </header>
+
+        <!-- Kontejner na otázky -->
+        <main class="quiz-container">
+            <section class="quiz">
+                <!-- Otázky se sem generují pomocí JS -->
+            </section>
+        </main>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
